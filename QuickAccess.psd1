@@ -20,4 +20,5 @@
         'qfoutput'
     )
     CompatiblePSEditions = @('Desktop', 'Core')
+	HelpInfoUri = 'https://github.com/June-10-cloudy/QuickAccess/tree/master/docs'
 }
