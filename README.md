@@ -1,4 +1,7 @@
 # QuickAccess for PowerShell
+
+[日本語訳 README-ja-JP.md](README.ja.md)
+
 ## What is QuickAccess?
 QuickAccess is a PowerShell module that recreates the Quick Access and Favorites features of File Explorer in a Command-Line Interface (CUI) environment. It provides a set of PowerShell cmdlets to simply manage and utilize frequently accessed folders and files. You can quickly reach the desired folder or file path by narrowing down targets with fuzzy search.
 
@@ -24,7 +27,7 @@ QuickAccess is a PowerShell module that recreates the Quick Access and Favorites
 - qaf : List subfolders within the current path
 #### [Get-QuickAccessOutput](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Get-QuickAccessOutput.md)
 - qao : Output QuickAccess results as string objects (for folders)
-### ファイル関連
+### File-related
 #### [Open-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Open-QuickFileAccess.md)
 - qf : Open a registered file with its default application
 #### [Add-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Add-QuickFileAccess.md)
@@ -38,7 +41,7 @@ QuickAccess is a PowerShell module that recreates the Quick Access and Favorites
 #### [Get-QuickFileAccessOutput](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Get-QuickFileAccessOutput.md)
 - qfo : Output QuickAccess results as string objects (for files)
 
-## nstallation
+## Installation
 
 ### Install from PowerShell Gallery (Recommended)
 You can easily install the module using the following command:
