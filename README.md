@@ -1,5 +1,4 @@
 # QuickAccess for PowerShell
-
 ## What is QuickAccess?
 QuickAccess is a PowerShell module that recreates the Quick Access and Favorites features of File Explorer in a Command-Line Interface (CUI) environment. It provides a set of PowerShell cmdlets to simply manage and utilize frequently accessed folders and files. You can quickly reach the desired folder or file path by narrowing down targets with fuzzy search.
 
@@ -77,4 +76,3 @@ CommandType     Name                                               Version    So
 -----------     ----                                               -------    ------
 Function        Enter-QuickAccess                                  1.0.0      QuickAccess
 ```
-
