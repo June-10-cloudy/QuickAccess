@@ -84,7 +84,7 @@ Saved: FolderA3-1 = C:\Users\user1\Documants\FolderA3</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -196,7 +196,7 @@ Favorited: C:\Users\[username]\Desktop\FileE2.txt</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -314,7 +314,7 @@ PS C:\Users\username\Documents\FolderB&gt;</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -427,7 +427,7 @@ PS C:\Users\[username]\Desktop\FolderD2&gt;</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -535,7 +535,7 @@ d-----         2023/10/26 10:00          FolderB</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -643,7 +643,7 @@ Mode                 LastWriteTime         Length Name
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -763,7 +763,7 @@ Enter the index to select: 1
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -883,7 +883,7 @@ Opening: C:\Users\[username]\Pictures\FileC3.jpg</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -997,7 +997,7 @@ Removed: FolderB</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1111,7 +1111,7 @@ Removed: FileB.txt</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1226,7 +1226,7 @@ Renamed 'FolderA2' to 'FolderA3'</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1306,7 +1306,7 @@ Accept wildcard characters: False</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1430,7 +1430,7 @@ path: C:\Users\[username]\Documents\FolderB</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1514,7 +1514,7 @@ Accept wildcard characters: False</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1594,7 +1594,7 @@ Accept wildcard characters: False</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
@@ -1717,7 +1717,7 @@ path: C:\Users\[username]\Documents\FileB.txt</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help/blob/main/en-US/QuickAccess-help.xml</maml:uri>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>QuickAccess Help Docments</maml:linkText>
