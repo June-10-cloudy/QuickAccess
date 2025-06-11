@@ -1,0 +1,66 @@
+<h1 id="add-quickfileaccess">Add-QuickFileAccess</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>カレントディレクトリからファイルを選択し、QuickAccessに登録します。
+エクスプローラーのお気に入り登録と同じ機能です。</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Add-QuickFileAccess [[-fuzzyKey] &lt;String&gt;]
+qfa [[-fuzzyKey] &lt;String&gt;]
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>“Add-QuickFileAccess” または “qfa” で、カレントディレクトリの直下にあるファイルをリスト表示します。
+インデックス選択でファイルをQuickAccessに登録します。
+fuzzyKeyを指定することで部分一致検索を行い、対象ファイルを絞り込むことができます。
+fuzzyKeyが指定されない場合、カレントディレクトリ直下の全ファイルがリスト表示されます。
+対象ファイルが既に登録されている場合、登録できません。
+同一キーが登録されているが、ファイルパスが違っている場合、キーの末尾にインデックスを付加し登録されます。</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="examples1">EXAMPLES1</h3>
+<p>fuzzyKey指定無しの場合、カレントディレクトリ直下のファイル全てをリスト表示します。
+インデックスを選択すると、対象ファイルがQuickAccessに登録されます。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qfa
+--------------------------------
+QF SAVE KEY
+--------------------------------
+[0] FileE1.txt
+[1] FileE2.txt
+[2] FileF.txt
+--------------------------------
+Enter the index to select: 2
+Favorited: C:\Users\[username]\Desktop\FileF.txt
+</code></pre></div></div>
+<h3 id="examples2">EXAMPLES2</h3>
+<p>fuzzyKey 指定あり。
+fuzzyKeyに”E”を指定した場合、”E”含むキーワード検索をします。
+該当があった場合、リスト表示されます。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qfa E
+--------------------------------
+QF SAVE KEY
+--------------------------------
+[0] FileE1.txt
+[1] FileE2.txt
+--------------------------------
+Enter the index to select: 1
+Favorited: C:\Users\[username]\Desktop\FileE2.txt
+</code></pre></div></div>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-fuzzykey">-fuzzyKey</h3>
+<p>部分一致検索を行うためのキーワード。
+省略された場合、登録されている全データがリスト表示。
+登録数が多い場合、fuzzyKeyの使用を推奨。</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span> <span class="s">qfa</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="なし">なし。</h3>
+<p>この関数はパイプライン入力を受け付けません。</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="なし-1">なし。</h3>
+<p>この関数はパイプラインにオブジェクトを出力しません。</p>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Documents</a></p>

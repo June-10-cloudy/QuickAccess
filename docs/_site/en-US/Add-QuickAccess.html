@@ -1,0 +1,50 @@
+<h1 id="add-quickaccess">Add-QuickAccess</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Registers the current path in QuickAccess.</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Add-QuickAccess
+qaa
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>“Add-QuickAccess” or “qaa” registers the current path in QuickAccess.
+The registered key defaults to the final directory name of the current path.
+The current path cannot be registered in the following cases:</p>
+<ul>
+  <li>The current path is already registered.</li>
+  <li>The current path is already registered with a different key.
+If the same key is registered but the path is different, an index will be appended to the end of the key, and it will be registered as a new key.
+    <h2 id="examples">EXAMPLES</h2>
+    <h3 id="examples1">EXAMPLES1</h3>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Using alias "qaa".
+PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Saved: test = C:\Users\[username]\Desktop\FolderA3
+</code></pre></div>    </div>
+    <h3 id="examples2">EXAMPLES2</h3>
+    <p>If already registered.</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Key 'FolderA3' with the same path already exists.
+</code></pre></div>    </div>
+    <h3 id="examples-3">EXAMPLES 3</h3>
+    <p>If the same path is already registered.</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Path 'C:\Users\[username]\Desktop\FolderA3' is already registered with another key.
+</code></pre></div>    </div>
+    <h3 id="examples-4">EXAMPLES 4</h3>
+    <p>If a key with the same name exists in the registered data, but you’re trying to register a different path.
+An index will be appended to the end of the key, and it will be registered as a new key.</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Key "FolderA3" with path 'C:\Users\[username]\Desktop\FolderA3' is already registered.
+PS C:\Users\[username]\Documents\FolderA3&gt; qaa
+Saved: FolderA3-1 = C:\Users\user1\Documants\FolderA3
+</code></pre></div>    </div>
+    <h2 id="parameters">PARAMETERS</h2>
+    <h2 id="inputs">INPUTS</h2>
+    <h3 id="none">None.</h3>
+    <p>This function does not accept pipeline input.</p>
+    <h2 id="outputs">OUTPUTS</h2>
+    <h3 id="none-1">None.</h3>
+    <p>This function does not output objects to the pipeline.</p>
+    <h2 id="notes">NOTES</h2>
+    <h2 id="related-links">RELATED LINKS</h2>
+    <p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Docments</a></p>
+  </li>
+</ul>

@@ -1,0 +1,1728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-QuickAccess</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>Registers the current path in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Add-QuickAccess" or "qaa" registers the current path in QuickAccess. The registered key defaults to the final directory name of the current path. The current path cannot be registered in the following cases: * The current path is already registered.</maml:para>
+      <maml:para>* The current path is already registered with a different key.</maml:para>
+      <maml:para>If the same key is registered but the path is different, an index will be appended to the end of the key, and it will be registered as a new key.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-QuickAccess</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qaa".
+PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Saved: test = C:\Users\[username]\Desktop\FolderA3</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Key 'FolderA3' with the same path already exists.</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES 3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Path 'C:\Users\[username]\Desktop\FolderA3' is already registered with another key.</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES 4 --------------------------</maml:title>
+        <dev:code># Key "FolderA3" with path 'C:\Users\[username]\Desktop\FolderA3' is already registered.
+PS C:\Users\[username]\Documents\FolderA3&gt; qaa
+Saved: FolderA3-1 = C:\Users\user1\Documants\FolderA3</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-QuickFileAccess</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>QuickFileAccess</command:noun>
+      <maml:description>
+        <maml:para>Selects a file from the current directory and registers it in QuickAccess. This is similar to adding a file to "Favorites" in File Explorer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Add-QuickFileAccess" or "qfa" lists files directly under the current directory. You can then select a file by index to register it in QuickAccess. By specifying a fuzzyKey, you can perform a partial match search to narrow down the target files. If no fuzzyKey is specified, all files directly under the current directory will be listed. If the target file is already registered, you cannot register it again. If the same key is already registered but for a different file path, an index will be appended to the end of the key, and it will be registered as a new key.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-QuickFileAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfa">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfa">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfa
+--------------------------------
+QF SAVE KEY
+--------------------------------
+[0] FileE1.txt
+[1] FileE2.txt
+[2] FileF.txt
+--------------------------------
+Enter the index to select: 2
+Favorited: C:\Users\[username]\Desktop\FileF.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfa E
+--------------------------------
+QF SAVE KEY
+--------------------------------
+[0] FileE1.txt
+[1] FileE2.txt
+--------------------------------
+Enter the index to select: 1
+Favorited: C:\Users\[username]\Desktop\FileE2.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enter-QuickAccess</command:name>
+      <command:verb>Enter</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>Navigates to a path registered in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The "Enter-QuickAccess" command lets you quickly move to a path registered in QuickAccess. If you specify a fuzzyKey, it performs a partial keyword match and displays a filtered list of matching keys. If no fuzzyKey is specified, all registered paths are listed for selection.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enter-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\username\Desktop&gt; qa
+--------------------------------
+QA MOVE CURRENT
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+PS C:\Users\username\Documents\FolderB&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\username\Desktop&gt; qa A
+--------------------------------
+QA MOVE CURRENT
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+PS C:\Users\username\Desktop\FolderA2&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\username\Desktop&gt; qa B
+PS C:\Users\username\Documents\FolderB&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enter-QuickAccessFolder</command:name>
+      <command:verb>Enter</command:verb>
+      <command:noun>QuickAccessFolder</command:noun>
+      <maml:description>
+        <maml:para>Lists subfolders in the current path and navigates to one by index selection.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This command lists subfolders directly under the current path and allows you to navigate to one by selecting its index. It targets folders not yet registered in QuickAccess, serving as a command to find target folders before registration. You can specify a fuzzyKey to perform a partial match search and narrow down the target folders. If multiple folders match, a list of target folders will be displayed. If no fuzzyKey is specified, all subfolders directly under the current path will be listed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enter-QuickAccessFolder</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfp">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qaf">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Enter-QuickAccessFolder" or "qaf" is used when searching for registration targets.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qaf".
+PS C:\Users\[username]\Desktop&gt; qaf
+--------------------------------
+QA FIND FOLDER
+--------------------------------
+[0] FolderD1
+[1] FolderD2
+[2] FolderE
+--------------------------------
+Enter the index to select: 2
+PS C:\Users\[username]\Desktop\FolderE&gt;qaa</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qaf
+--------------------------------
+QA FIND FOLDER
+--------------------------------
+[0] FolderD1
+[1] FolderD2
+--------------------------------
+Enter the index to select: 1
+PS C:\Users\[username]\Desktop\FolderD2&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-QuickAccessOutput</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>QuickAccessOutput</command:noun>
+      <maml:description>
+        <maml:para>Outputs QuickAccess search results as a string object.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Get-QuickAccessOutput" or "qao" outputs the search results obtained from QuickAccess as a string object. This is useful for piping the path to other commands or assigning it to a variable. If you specify a fuzzyKey, it performs a partial keyword search and displays a filtered list of matching keys. If no fuzzyKey is specified, all registered items are listed for selection.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-QuickAccessOutput</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function outputs the absolute path of the selected folder as a string object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Get-QuickAccessOutput" is useful when chaining commands via the pipeline.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qao
+--------------------------------
+QA OUTPUT PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+C:\Users\[username]\Documents\FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qao B | Get-Item
+Directory: C:\Users\[username]\Documents
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         2023/10/26 10:00          FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-QuickFileAccessOutput</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>QuickFileAccessOutput</command:noun>
+      <maml:description>
+        <maml:para>Outputs QuickAccess search results as a string object.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Get-QuickFileAccessOutput" or "qfo" outputs the search results obtained from QuickAccess as a string object. This is useful for piping to other commands or assigning to a variable. If you specify a fuzzyKey, it performs a partial keyword search and displays a filtered list of matching keys. If no fuzzyKey is specified, all registered items are displayed in a list for selection.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-QuickFileAccessOutput</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function outputs the absolute path of the selected folder as a string object.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Get-QuickFileAccessOutput" is useful when chaining commands via the pipeline.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfo
+--------------------------------
+QF OUTPUT PATH
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+Enter the index to select: 2
+C:\Users\[username]\Documents\FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfo B | Get-Item
+Directory: C:\Users\[username]\Documents
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---         2023/10/26 10:00                   FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Open-QuickAccessExplorer</command:name>
+      <command:verb>Open</command:verb>
+      <command:noun>QuickAccessExplorer</command:noun>
+      <maml:description>
+        <maml:para>Opens a path registered in QuickAccess with File Explorer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>You can open a path registered in QuickAccess with File Explorer using "Open-QuickAccessExplorer " or "qae". If you specify a fuzzyKey, it performs a partial keyword match search and displays a filtered list of corresponding keys. If no fuzzyKey is specified, all registered items are displayed in a list.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Open-QuickAccessExplorer</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qae">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qae">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Open-QuickAccessExplorer " or "qae" uses explorer.exe to open folders.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qae
+--------------------------------
+QA OPEN EXPLORER
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+# File Explorer opens to the selected path.</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qae A
+--------------------------------
+QA OPEN EXPLORER
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+# File Explorer opens to the selected path.</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qae B
+# 該当したパスでファイルエクスプローラーが開く。</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Open-QuickFileAccess</command:name>
+      <command:verb>Open</command:verb>
+      <command:noun>QuickFileAccess</command:noun>
+      <maml:description>
+        <maml:para>Opens a file registered in QuickAccess with its default application. This is similar to the "Favorites" feature in File Explorer.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Open-QuickFileAccess" opens a file registered in QuickAccess with its default application. If you specify a fuzzyKey, it performs a partial keyword match search and displays a filtered list of corresponding keys. If no fuzzyKey is specified, all registered items are displayed in a list. If the file doesn't exist, an error message is output.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Open-QuickFileAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qf
+--------------------------------
+QF OPEN FILE
+--------------------------------
+[0] FileC1.jpg
+[1] FileC2.png
+[2] FileC3.jpg
+--------------------------------
+Enter the index to select: 1
+Opening: C:\Users\[username]\Pictures\FileC2.png</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES 2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qf jp
+--------------------------------
+QF OPEN FILE
+--------------------------------
+[0] FileC1.jpg
+[1] FileC3.jpg
+--------------------------------
+Enter the index to select: 1
+Opening: C:\Users\[username]\Pictures\FileC3.jpg</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\user1&gt; qf C3
+Opening: C:\Users\[username]\Pictures\FileC3.jpg</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-QuickAccess</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>Unregisters a key from QuickAccess. This applies to folders.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Remove-QuickAccess" or "qax" unregisters a key from QuickAccess. The directory itself will not be deleted. You can specify a fuzzyKey to perform a partial match search and narrow down the target keys. If no fuzzyKey is specified, all registered items will be displayed in a list.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey will make it easier to find the desired entry from the list.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey will make it easier to find the desired entry from the list.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qax".
+PS C:\Users\[username]\Desktop&gt; qax
+--------------------------------
+QA REMOVE KEY
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FolderA1'? (y/N): y
+Removed: FolderA1</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qax B
+--------------------------------
+QA REMOVE KEY
+--------------------------------
+[0] FolderB
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FolderB'? (y/N): y
+Removed: FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-QuickAccess</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>Unregisters a key from QuickAccess. This applies to files.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Remove-QuickFileAccess" or "qfx" unregisters a key from QuickAccess. The file itself will not be deleted. You can specify a fuzzyKey to perform a partial match search and narrow down the target keys. If no fuzzyKey is specified, all registered items will be displayed in a list.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfx">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfx">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qfx".
+PS C:\Users\[username]\Desktop&gt; qfx
+--------------------------------
+QF REMOVE KEY
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FileA1.txt'? (y/N): y
+Removed: FileA1.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfx B
+--------------------------------
+QF REMOVE KEY
+--------------------------------
+[0] FileB.txt
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FileB.txt'? (y/N): y
+Removed: FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Rename-QuickAccess</command:name>
+      <command:verb>Rename</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>Renames a registered key in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>You can rename a QuickAccess registered key using "Rename-QuickAccess" or "qar". By specifying a fuzzyKey, you can perform a partial match search and narrow down the target keys. If no fuzzyKey is specified, all registered items will be displayed in a list.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Rename-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qar">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qar">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qar".
+PS C:\Users\[username]\Desktop&gt; qar
+--------------------------------
+QA RENAME KEY
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+Enter new name for 'FolderB': FolderC
+Renamed 'FolderB' to 'FolderC'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qar A
+--------------------------------
+QA RENAME KEY
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+Enter new name for 'FolderA2': FolderA3
+Renamed 'FolderA2' to 'FolderA3'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickAccessList</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickAccessList</command:noun>
+      <maml:description>
+        <maml:para>Lists all registered folder path keys in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>You can view all keys registered in QuickAccess using "Show-QuickAccessList" or "qal". This command only lists folder paths; file paths are not included.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickAccessList</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickAccessList" or "qal" is a viewing command. It performs no actions.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qal".
+PS C:\Users\[username]\Desktop&gt; qal
+--------------------------------
+QA ALL KEYS
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+
+Type: String
+Parameter Sets: (All)
+Aliases: qal
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickAccessPath</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickAccessPath</command:noun>
+      <maml:description>
+        <maml:para>Displays the absolute path corresponding to a key registered in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickAccessPath" or "qap" displays the absolute path corresponding to a QuickAccess registration key. You can specify a fuzzyKey to perform a partial match search and narrow down the target keys. If multiple keys match, a list of registered keys will be displayed. If only one key matches, its absolute path will be displayed directly. If no fuzzyKey is specified, all registered items are displayed in a list.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickAccessPath</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qap">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qap">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickAccessPath" or "qap" is useful for verifying the absolute path associated with a registered key.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qap".
+PS C:\Users\[username]\Desktop&gt; qap
+--------------------------------
+QA SHOW PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2 
+[2] FolderB
+--------------------------------
+Enter the index to select: 1
+key : FolderA2
+path: C:\Users\[username]\Desktop\FolderA2</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qap A
+--------------------------------
+QA SHOW PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+key : FolderA2
+path: C:\Users\[username]\Desktop\FolderA2</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qap B
+key : FolderB
+path: C:\Users\[username]\Documents\FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickAccessStatus</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickAccessStatus</command:noun>
+      <maml:description>
+        <maml:para>Checks if the current path is registered in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>You can check if the current path is registered in QuickAccess using "Show-QuickAccessStatus" or "qas". If it's registered, the corresponding key will be displayed. If it's not registered, a message indicating that will be shown.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickAccessStatus</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\&lt;UserName&gt;\Documents\FolderB&gt; Show-QuickAccessStatus
+Key for current path: B
+# Using alias "qas".
+PS C:\Users\&lt;UserName&gt;\Documents\FolderB&gt; qas
+Key for current path: B</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\&lt;UserName&gt;\Documents\FolderB&gt; qas
+Current path is not registered.
+
+Type: String
+Parameter Sets: (All)
+Aliases: qas
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickAccessList</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickAccessList</command:noun>
+      <maml:description>
+        <maml:para>Lists all registered file path keys in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>You can view all keys registered in QuickAccess using "Show-QuickFileAccessList" or "qfl". This command only lists file paths; folder paths are not included.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickAccessList</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not output objects to the pipeline.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickFileAccessList" or "qfl" is a viewing command. It performs no actions.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># Using alias "qfl".
+PS C:\Users\[username]\Desktop&gt; qfl
+--------------------------------
+QA ALL KEYS
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+
+Type: String
+Parameter Sets: (All)
+Aliases: qfl
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickFileAccessPath</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickFileAccessPath</command:noun>
+      <maml:description>
+        <maml:para>Displays the absolute path corresponding to a key registered in QuickAccess.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickFileAccessPath" or "qfp" displays the absolute path corresponding to a QuickAccess registration key. You can specify a fuzzyKey to perform a partial match search and narrow down the target keys. If multiple keys match, a list of registered keys will be displayed. If only one key matches, its absolute path will be displayed directly. If no fuzzyKey is specified, all registered items are displayed in a list.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickFileAccessPath</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfp">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfp">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>A keyword for partial match searching. If omitted, all registered data will be listed. If there are many registered items, using a fuzzyKey is recommended.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This function does not accept pipeline input.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None.</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>This function does not output objects to the pipeline.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]&gt; qfp
+--------------------------------
+QF SHOW PATH
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+Enter the index to select: 0
+key : FIleA1.txt
+path: C:\Users\[username]\Documents\FileA1.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfp A
+--------------------------------
+QF SHOW PATH
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+--------------------------------
+Enter the index to select: 1
+key : FileA2.txt
+path: C:\Users\[username]\Desktop\FileA2.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfp B
+key : FileB.txt
+path: C:\Users\[username]\Documents\FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/en-US/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Docments</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

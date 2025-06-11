@@ -1,0 +1,1715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-QuickAccess</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>カレントパスを QuickAccessに登録します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Add-QuickAccess" または "qaa" は、カレントパスをQuickAccessに登録します。 登録されるキーは、デフォルトでカレントパスの最終ディレクトリ名になります。 以下の場合、カレントパスを登録できません。 ・カレントパスが既に登録されている場合。 ・カレントパスが別のキーで既に登録されている場合。 同一キーが登録されているが、パスが違っている場合、キーの末尾にインデックスを付加し登録されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-QuickAccess</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># エイリアス"qaa"を使用。
+PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Saved: test = C:\Users\[username]\Desktop\FolderA3</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Key 'FolderA3' with the same path already exists.</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES 3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Path 'C:\Users\[username]\Desktop\FolderA3' is already registered with another key.</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES 4 --------------------------</maml:title>
+        <dev:code># 既にキー"FolderA3" パス 'C:\Users\[username]\Desktop\FolderA3' が登録されている。
+PS C:\Users\[username]\Documents\FolderA3&gt; qaa
+Saved: FolderA3-1 = C:\Users\user1\Documants\FolderA3</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-QuickFileAccess</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>QuickFileAccess</command:noun>
+      <maml:description>
+        <maml:para>カレントディレクトリからファイルを選択し、QuickAccessに登録します。 エクスプローラーのお気に入り登録と同じ機能です。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Add-QuickFileAccess" または "qfa" で、カレントディレクトリの直下にあるファイルをリスト表示します。 インデックス選択でファイルをQuickAccessに登録します。 fuzzyKeyを指定することで部分一致検索を行い、対象ファイルを絞り込むことができます。 fuzzyKeyが指定されない場合、カレントディレクトリ直下の全ファイルがリスト表示されます。 対象ファイルが既に登録されている場合、登録できません。 同一キーが登録されているが、ファイルパスが違っている場合、キーの末尾にインデックスを付加し登録されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-QuickFileAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfa">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfa">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfa
+--------------------------------
+QF SAVE KEY
+--------------------------------
+[0] FileE1.txt
+[1] FileE2.txt
+[2] FileF.txt
+--------------------------------
+Enter the index to select: 2
+Favorited: C:\Users\[username]\Desktop\FileF.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfa E
+--------------------------------
+QF SAVE KEY
+--------------------------------
+[0] FileE1.txt
+[1] FileE2.txt
+--------------------------------
+Enter the index to select: 1
+Favorited: C:\Users\[username]\Desktop\FileE2.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enter-QuickAccess</command:name>
+      <command:verb>Enter</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたパスへ移動します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>コマンド"Enter-QuickAccess"で、QuickAccessに登録されているパスへと素早く移動できます。fuzzyKeyを指定すると、キーワード部分一致検索を行い、絞り込まれた該当するキーリストを表示します。fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enter-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>無し。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>無し。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\username\Desktop&gt; qa
+--------------------------------
+QA MOVE CURRENT
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+PS C:\Users\username\Documents\FolderB&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\username\Desktop&gt; qa A
+--------------------------------
+QA MOVE CURRENT
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+PS C:\Users\username\Desktop\FolderA2&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qa B
+PS C:\Users\[username]\Documents\FolderB&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enter-QuickAccessFolder</command:name>
+      <command:verb>Enter</command:verb>
+      <command:noun>QuickAccessFolder</command:noun>
+      <maml:description>
+        <maml:para>カレントパス内のサブフォルダをリスト表示し、インデックス選択で移動します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>カレントパスの直下にあるサブフォルダをリスト表示し、インデックス選択で移動します。 QuickAccessに登録されていないフォルダも対象。登録前の対象フォルダーを探すためのコマンド。 fuzzyKeyを指定することで部分一致検索を行い、対象フォルダを絞り込むことができます。 複数が該当する場合、対象フォルダのリストが表示されます。 fuzzyKeyが指定されない場合、カレント直下の全サブフォルダがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enter-QuickAccessFolder</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfp">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qaf">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Enter-QuickAccessFolder" または "qaf" は、登録対象を検索する時に使用します。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>#エイリアス"qaf"を使用。
+PS C:\Users\[username]\Desktop&gt; qaf
+--------------------------------
+QA FIND FOLDER
+--------------------------------
+[0] FolderD1
+[1] FolderD2
+[2] FolderE
+--------------------------------
+Enter the index to select: 2
+PS C:\Users\[username]\Desktop\FolderE&gt;qaa</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qaf
+--------------------------------
+QA FIND FOLDER
+--------------------------------
+[0] FolderD1
+[1] FolderD2
+--------------------------------
+Enter the index to select: 1
+PS C:\Users\[username]\Desktop\FolderD2&gt;</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-QuickAccessOutput</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>QuickAccessOutput</command:noun>
+      <maml:description>
+        <maml:para>QuickAccessの結果を文字列オブジェクトとして出力します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Get-QuickAccessOutput" または、"qao" は、QuickAccess上で得られた検索結果を文字列オブジェクト として出力します。他のコマンドへのパイプ、変数に割り当てたりする際に役立ちます。 fuzzyKeyを指定すると、キーワード部分一致検索を行い、絞り込まれた該当するキーリストを表示します。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-QuickAccessOutput</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>無し。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数は、選択されたフォルダーの絶対パスを文字列オブジェクトとして出力します。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Get-QuickAccessOutput"は、パイプによってコマンド連結する場合に役立ちます。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qao
+--------------------------------
+QA OUTPUT PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+C:\Users\[username]\Documents\FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qao B | Get-Item
+Directory: C:\Users\[username]\Documents
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         2023/10/26 10:00          FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-QuickFileAccessOutput</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>QuickFileAccessOutput</command:noun>
+      <maml:description>
+        <maml:para>QuickAccessの結果を文字列オブジェクトとして出力します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Get-QuickFileAccessOutput" または、"qfo" は、QuickAccess上で得られた検索結果を文字列オブジェクト として出力します。他のコマンドへのパイプ、変数に割り当てたりする際に役立ちます。 fuzzyKeyを指定すると、キーワード部分一致検索を行い、絞り込まれた該当するキーリストを表示します。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-QuickFileAccessOutput</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数は、選択されたフォルダーの絶対パスを文字列オブジェクトとして出力します。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Get-QuickAccessOutput"は、パイプによってコマンド連結する場合に役立ちます。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfo
+--------------------------------
+QF OUTPUT PATH
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+Enter the index to select: 2
+C:\Users\[username]\Documents\FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfo B | Get-Item
+Directory: C:\Users\[username]\Documents
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---         2023/10/26 10:00                   FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Open-QuickAccessExplorer</command:name>
+      <command:verb>Open</command:verb>
+      <command:noun>QuickAccessExplorer</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたパスをファイルエクスプローラーで開きます。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Open-QuickAccessExplorer " または "qae" で、QuickAccessに登録されているパスをファイルエクスプローラーで開きます。 fuzzyKeyを指定すると、キーワード部分一致検索を行い、絞り込まれた該当するキーリストを表示します。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Open-QuickAccessExplorer</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qae">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qae">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。この関数はパイプライン入力を受け付けません。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。この関数はパイプラインにオブジェクトを出力しません。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Open-QuickAccessExplorer " または "qae"はフォルダを開くために explorer.exe を使用します。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qae
+--------------------------------
+QA OPEN EXPLORER
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+# 選択されたパスでファイルエクスプローラーが開く。</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qa A
+--------------------------------
+QA OPEN EXPLORER
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+# 選択されたパスでファイルエクスプローラーが開く。</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qa B
+# 該当したパスでファイルエクスプローラーが開く。</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Open-QuickFileAccess</command:name>
+      <command:verb>Open</command:verb>
+      <command:noun>QuickFileAccess</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたファイルを既定のアプリケーションで開きます。 ファイルエクスプローラーの"お気に入り"と同じ機能です。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Open-QuickFileAccess" は、QuickAccessに登録されたファイルを既定アプリケーションで開きます。 fuzzyKeyを指定すると、キーワード部分一致検索を行い、絞り込まれた該当するキーリストを表示します。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。 ファイルが存在しない場合、エラーメッセージを出力します。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Open-QuickFileAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickFileAccessList" または "qfl"は、閲覧用コマンドです。アクションはありません。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qf
+--------------------------------
+QF OPEN FILE
+--------------------------------
+[0] FileC1.jpg
+[1] FileC2.png
+[2] FileC3.jpg
+--------------------------------
+Enter the index to select: 1
+Opening: C:\Users\[username]\Pictures\FileC2.png</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES 2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qf jp
+--------------------------------
+QF OPEN FILE
+--------------------------------
+[0] FileC1.jpg
+[1] FileC3.jpg
+--------------------------------
+Enter the index to select: 1
+Opening: C:\Users\[username]\Pictures\FileC3.jpg</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\user1&gt; qf C3
+Opening: C:\Users\[username]\Pictures\FileC3.jpg</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-QuickAccess</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたキーを解除します。フォルダ対象。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Remove-QuickAccess" または "qax" は、QuickAccessに登録されたキーを解除します。 ディレクトリそのものが削除されることはありません。 fuzzyKeyを指定することで部分一致検索を行い、対象キーを絞り込むことができます。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyを使用する方がリストから見つけやすいでしょう。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyを使用する方がリストから見つけやすいでしょう。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>#エイリアス"qax"を使用。
+PS C:\Users\[username]\Desktop&gt; qax
+--------------------------------
+QA REMOVE KEY
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FolderA1'? (y/N): y
+Removed: FolderA1</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qax B
+--------------------------------
+QA REMOVE KEY
+--------------------------------
+[0] FolderB
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FolderB'? (y/N): y
+Removed: FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-QuickAccess</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたキーを解除します。ファイル対象。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Remove-QuickFileAccess" または "qfx" は、QuickAccessに登録されたキーを解除します。 ファイルそのものが削除されることはありません。 fuzzyKeyを指定することで部分一致検索を行い、対象キーを絞り込むことができます。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfx">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfx">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>#エイリアス"qfx"を使用。
+PS C:\Users\[username]\Desktop&gt; qfx
+--------------------------------
+QF REMOVE KEY
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FileA1.txt'? (y/N): y
+Removed: FileA1.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfx B
+--------------------------------
+QF REMOVE KEY
+--------------------------------
+[0] FileB.txt
+--------------------------------
+Enter the index to select: 0
+Do you want to remove 'FileB.txt'? (y/N): y
+Removed: FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Rename-QuickAccess</command:name>
+      <command:verb>Rename</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>QuickAccessに登録されたキーのリネームを行います。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Rename-QuickAccess" または "qar" で、QuickAccessの登録キーのリネームが出来ます。 fuzzyKeyを指定することで部分一致検索を行い、対象キーを絞り込むことができます。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Rename-QuickAccess</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qar">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qar">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># エイリアス"qar"を使用。
+PS C:\Users\[username]\Desktop&gt; qar
+--------------------------------
+QA RENAME KEY
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+Enter new name for 'FolderB': FolderC
+Renamed 'FolderB' to 'FolderC'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qar A
+--------------------------------
+QA RENAME KEY
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+Enter new name for 'FolderA2': FolderA3
+Renamed 'FolderA2' to 'FolderA3'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>qa</command:name>
+      <command:verb>qa</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>QuickAccessに登録されたフォルダパス全てのキーをリスト表示します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickAccessList" または、"qal" で、QuickAccessに登録されている全てのキーを確認することが出来ます。 対象はフォルダパスのみで、ファイルパス含まれません。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>qa</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickAccessList" または "qal"は、閲覧用コマンドです。アクションはありません。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># エイリアス"qal"を使用。
+PS C:\Users\[username]\Desktop&gt; qal
+--------------------------------
+QA ALL KEYS
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+
+Type: String
+Parameter Sets: (All)
+Aliases: qal
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickAccessPath</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickAccessPath</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたキーに対応する絶対パスを表示します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickAccessPath" または "qap" は、QuickAccess登録キーに対応する絶対パスを表示します。 fuzzyKeyを指定することで部分一致検索を行い、対象キーを絞り込むことができます。 複数が該当する場合、登録キーリストが表示されます。該当が一つの場合、絶対パスを表示します。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickAccessPath</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qap">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qap">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickAccessPath" または "qap" は、登録キーに紐づいた絶対パスを確認するために役立ちます。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>#エイリアス"qap"を使用。
+PS C:\Users\[username]\Desktop&gt; qap
+--------------------------------
+QA SHOW PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2 
+[2] FolderB
+--------------------------------
+Enter the index to select: 1
+key : FolderA2
+path: C:\Users\[username]\Desktop\FolderA2</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qap A
+--------------------------------
+QA SHOW PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+--------------------------------
+Enter the index to select: 1
+key : FolderA2
+path: C:\Users\[username]\Desktop\FolderA2</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qap B
+key : FolderB
+path: C:\Users\[username]\Documents\FolderB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickAccessStatus</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickAccessStatus</command:noun>
+      <maml:description>
+        <maml:para>カレントパスが QuickAccessに登録されているかを確認します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickAccessStatus" または "qas" でカレントパスがQuickAccessに登録されているか確認できます。 登録されている場合、対応するキーが表示されます。 登録されていない場合は、その旨がメッセージで示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickAccessStatus</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\&lt;UserName&gt;\Documents\FolderB&gt; Show-QuickAccessStatus
+Key for current path: B
+#エイリアス"qas"を使用。
+PS C:\Users\&lt;UserName&gt;\Documents\FolderB&gt; qas
+Key for current path: B</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>#エイリアス"qas"を使用。
+PS C:\Users\&lt;UserName&gt;\Documents\FolderB&gt; qas
+Current path is not registered.
+
+Type: String
+Parameter Sets: (All)
+Aliases: qas
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Enter-QuickAccess</command:name>
+      <command:verb>Enter</command:verb>
+      <command:noun>QuickAccess</command:noun>
+      <maml:description>
+        <maml:para>QuickAccessに登録されたファイルパス全てのキーをリスト表示します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickFileAccessList" または、"qfl" で、QuickAccessに登録されている全てのキーを確認することが出来ます。 対象はファイルパスのみで、フォルダパス含まれません。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enter-QuickAccess</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickFileAccessList" または "qfl"は、閲覧用コマンドです。アクションはありません。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code># エイリアス"qfl"を使用。
+PS C:\Users\[username]\Desktop&gt; qfl
+--------------------------------
+QA ALL KEYS
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+
+Type: String
+Parameter Sets: (All)
+Aliases: qfl
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Show-QuickFileAccessPath</command:name>
+      <command:verb>Show</command:verb>
+      <command:noun>QuickFileAccessPath</command:noun>
+      <maml:description>
+        <maml:para>QuickAccess に登録されたキーに対応する絶対パスを表示します。</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>"Show-QuickFileAccessPath" または "qfp" は、QuickAccess登録キーに対応する絶対パスを表示します。 fuzzyKeyを指定することで部分一致検索を行い、対象キーを絞り込むことができます。 複数が該当する場合、登録キーリストが表示されます。該当が一つの場合、絶対パスを表示します。 fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-QuickFileAccessPath</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfp">
+          <maml:name>fuzzyKey</maml:name>
+          <maml:description>
+            <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="qfp">
+        <maml:name>fuzzyKey</maml:name>
+        <maml:description>
+          <maml:para>部分一致検索を行うためのキーワード。 省略された場合、登録されている全データがリスト表示。 登録数が多い場合、fuzzyKeyの使用を推奨。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプライン入力を受け付けません。</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>なし。</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>この関数はパイプラインにオブジェクトを出力しません。</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>"Show-QuickFileAccessPath" または "qfp" は、登録キーに紐づいた絶対パスを確認するために役立ちます。</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES1 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]&gt; qfp
+--------------------------------
+QF SHOW PATH
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+[2] FileB.txt
+--------------------------------
+Enter the index to select: 0
+key : FIleA1.txt
+path: C:\Users\[username]\Documents\FileA1.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES2 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfp A
+--------------------------------
+QF SHOW PATH
+--------------------------------
+[0] FileA1.txt
+[1] FileA2.txt
+--------------------------------
+Enter the index to select: 1
+key : FileA2.txt
+path: C:\Users\[username]\Desktop\FileA2.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLES3 --------------------------</maml:title>
+        <dev:code>PS C:\Users\[username]\Desktop&gt; qfp B
+key : FileB.txt
+path: C:\Users\[username]\Documents\FileB.txt</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>QuickAccess Help Documents</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

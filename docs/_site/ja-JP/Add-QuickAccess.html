@@ -1,0 +1,46 @@
+<h1 id="add-quickaccess">Add-QuickAccess</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>カレントパスを QuickAccessに登録します。</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Add-QuickAccess
+qaa
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>“Add-QuickAccess” または “qaa” は、カレントパスをQuickAccessに登録します。
+登録されるキーは、デフォルトでカレントパスの最終ディレクトリ名になります。
+以下の場合、カレントパスを登録できません。
+・カレントパスが既に登録されている場合。
+・カレントパスが別のキーで既に登録されている場合。
+同一キーが登録されているが、パスが違っている場合、キーの末尾にインデックスを付加し登録されます。</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="examples1">EXAMPLES1</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># エイリアス"qaa"を使用。
+PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Saved: test = C:\Users\[username]\Desktop\FolderA3
+</code></pre></div></div>
+<h3 id="examples2">EXAMPLES2</h3>
+<p>既に登録されている場合。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Key 'FolderA3' with the same path already exists.
+</code></pre></div></div>
+<h3 id="examples-3">EXAMPLES 3</h3>
+<p>同一のパスが既に登録されている場合。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop\FolderA3&gt; qaa
+Warning: Path 'C:\Users\[username]\Desktop\FolderA3' is already registered with another key.
+</code></pre></div></div>
+<h3 id="examples-4">EXAMPLES 4</h3>
+<p>登録データに同一のキーが存在するが、違うパスを登録しようとした場合。
+キーに末尾にインデックスが付加され、新しいキーとして登録される。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 既にキー"FolderA3" パス 'C:\Users\[username]\Desktop\FolderA3' が登録されている。
+PS C:\Users\[username]\Documents\FolderA3&gt; qaa
+Saved: FolderA3-1 = C:\Users\user1\Documants\FolderA3
+</code></pre></div></div>
+<h2 id="parameters">PARAMETERS</h2>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="なし">なし。</h3>
+<p>この関数はパイプライン入力を受け付けません。</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="なし-1">なし。</h3>
+<p>この関数はパイプラインにオブジェクトを出力しません。</p>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Documents</a></p>

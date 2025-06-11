@@ -1,0 +1,77 @@
+<h1 id="enter-quickaccessfolder">Enter-QuickAccessFolder</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>カレントパス内のサブフォルダをリスト表示し、インデックス選択で移動します。</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter-QuickAccessFolder [[-fuzzyKey] &lt;String&gt;]
+qaf [[-fuzzyKey] &lt;String&gt;]
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>カレントパスの直下にあるサブフォルダをリスト表示し、インデックス選択で移動します。
+QuickAccessに登録されていないフォルダも対象。登録前の対象フォルダーを探すためのコマンド。
+fuzzyKeyを指定することで部分一致検索を行い、対象フォルダを絞り込むことができます。
+複数が該当する場合、対象フォルダのリストが表示されます。
+fuzzyKeyが指定されない場合、カレント直下の全サブフォルダがリスト表示されます。</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="examples1">EXAMPLES1</h3>
+<p>fuzzyKeyの指定無し。
+“qaf”でカレント直下のサブフォルダをリストアップし、インデックスで選択。
+カレントが切り替わったら”qaa”でQuickAccessに登録。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#エイリアス"qaf"を使用。
+PS C:\Users\[username]\Desktop&gt; qaf
+--------------------------------
+QA FIND FOLDER
+--------------------------------
+[0] FolderD1
+[1] FolderD2
+[2] FolderE
+--------------------------------
+Enter the index to select: 2
+PS C:\Users\[username]\Desktop\FolderE&gt;qaa
+</code></pre></div></div>
+<h3 id="examples2">EXAMPLES2</h3>
+<p>fuzzyKey 指定あり。複数該当。
+fuzzyKeyに”D”を指定した場合、”D”含むキーワード検索をします。
+該当があった場合、リスト表示されます。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qaf
+--------------------------------
+QA FIND FOLDER
+--------------------------------
+[0] FolderD1
+[1] FolderD2
+--------------------------------
+Enter the index to select: 1
+PS C:\Users\[username]\Desktop\FolderD2&gt;
+</code></pre></div></div>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-fuzzykey">-fuzzyKey</h3>
+<p>部分一致検索を行うためのキーワード。
+省略された場合、登録されている全データがリスト表示。
+登録数が多い場合、fuzzyKeyの使用を推奨。</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span> <span class="s">qaf</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span> <span class="s">qfp</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="なし">なし。</h3>
+<p>この関数はパイプライン入力を受け付けません。</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="なし-1">なし。</h3>
+<p>この関数はパイプラインにオブジェクトを出力しません。</p>
+<h2 id="notes">NOTES</h2>
+<p>“Enter-QuickAccessFolder” または “qaf” は、登録対象を検索する時に使用します。</p>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Documents</a></p>

@@ -1,0 +1,69 @@
+<h1 id="open-quickfileaccess">Open-QuickFileAccess</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Opens a file registered in QuickAccess with its default application. This is similar to the “Favorites” feature in File Explorer.</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Open-QuickFileAccess [[-fuzzyKey] &lt;String&gt;]
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>“Open-QuickFileAccess” opens a file registered in QuickAccess with its default application.
+If you specify a fuzzyKey, it performs a partial keyword match search and displays a filtered list of corresponding keys.
+If no fuzzyKey is specified, all registered items are displayed in a list.
+If the file doesn’t exist, an error message is output.</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="examples1">EXAMPLES1</h3>
+<p>When no fuzzyKey is specified, this example displays a full list of registered items and opens the selected index.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qf
+--------------------------------
+QF OPEN FILE
+--------------------------------
+[0] FileC1.jpg
+[1] FileC2.png
+[2] FileC3.jpg
+--------------------------------
+Enter the index to select: 1
+Opening: C:\Users\[username]\Pictures\FileC2.png
+</code></pre></div></div>
+<h3 id="examples-2">EXAMPLES 2</h3>
+<p>fuzzyKey is specified. Multiple matches.
+If “jp” is specified as the fuzzyKey, it searches for keywords containing “jp”.
+If multiple matches are found, a list is displayed.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qf jp
+--------------------------------
+QF OPEN FILE
+--------------------------------
+[0] FileC1.jpg
+[1] FileC3.jpg
+--------------------------------
+Enter the index to select: 1
+Opening: C:\Users\[username]\Pictures\FileC3.jpg
+</code></pre></div></div>
+<h3 id="examples3">EXAMPLES3</h3>
+<p>fuzzyKey is specified. Only one match found.
+If “C3” is specified as the fuzzyKey, only one match is found, so the application launches directly.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\user1&gt; qf C3
+Opening: C:\Users\[username]\Pictures\FileC3.jpg
+</code></pre></div></div>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-fuzzykey">-fuzzyKey</h3>
+<p>A keyword for partial match searching.
+If omitted, all registered data will be listed.
+If there are many registered items, using fuzzyKey is recommended.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="none">None.</h3>
+<p>This function does not accept pipeline input.</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="none-1">None.</h3>
+<p>This function does not output objects to the pipeline.</p>
+<h2 id="notes">NOTES</h2>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Docments</a></p>
+

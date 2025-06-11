@@ -1,0 +1,41 @@
+<h1 id="qa">qa</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>QuickAccessに登録されたフォルダパス全てのキーをリスト表示します。</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Show-QuickAccessList
+qal
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>“Show-QuickAccessList” または、”qal” で、QuickAccessに登録されている全てのキーを確認することが出来ます。
+対象はフォルダパスのみで、ファイルパス含まれません。</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="examples1">EXAMPLES1</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># エイリアス"qal"を使用。
+PS C:\Users\[username]\Desktop&gt; qal
+--------------------------------
+QA ALL KEYS
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span> <span class="s">qal</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="なし">なし。</h3>
+<p>この関数はパイプライン入力を受け付けません。</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="なし-1">なし。</h3>
+<p>この関数はパイプラインにオブジェクトを出力しません。</p>
+<h2 id="notes">NOTES</h2>
+<p>“Show-QuickAccessList” または “qal”は、閲覧用コマンドです。アクションはありません。</p>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Documents</a></p>

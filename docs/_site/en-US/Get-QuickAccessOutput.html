@@ -1,0 +1,59 @@
+<h1 id="get-quickaccessoutput">Get-QuickAccessOutput</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Outputs QuickAccess search results as a string object.</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Get-QuickAccessOutput [[-fuzzyKey] &lt;String&gt;]
+qao [[-fuzzyKey] &lt;String&gt;]
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>“Get-QuickAccessOutput” or “qao” outputs the search results obtained from QuickAccess as a string object.
+This is useful for piping the path to other commands or assigning it to a variable.
+If you specify a fuzzyKey, it performs a partial keyword search and displays a filtered list of matching keys.
+If no fuzzyKey is specified, all registered items are listed for selection.</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">Example 1</h3>
+<p>This example selects a registered path and outputs it to the console.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qao
+--------------------------------
+QA OUTPUT PATH
+--------------------------------
+[0] FolderA1
+[1] FolderA2
+[2] FolderB
+--------------------------------
+Enter the index to select: 2
+C:\Users\[username]\Documents\FolderB
+</code></pre></div></div>
+<h3 id="example-2">Example 2</h3>
+<p>This example pipes a path obtained from QuickAccess to Get-Item to display its properties.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qao B | Get-Item
+Directory: C:\Users\[username]\Documents
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         2023/10/26 10:00          FolderB
+</code></pre></div></div>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-fuzzykey">-fuzzyKey</h3>
+<p>A keyword for partial match searching.
+If omitted, all registered data will be listed.
+If there are many registered items, using fuzzyKey is recommended.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="none">None.</h3>
+<p>This function does not accept pipeline input.</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="systemstring">System.String</h3>
+<p>This function outputs the absolute path of the selected folder as a string object.</p>
+<h2 id="notes">NOTES</h2>
+<p>“Get-QuickAccessOutput” is useful when chaining commands via the pipeline.</p>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Docments</a></p>
+

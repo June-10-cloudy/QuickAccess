@@ -1,0 +1,61 @@
+<h1 id="enter-quickaccess">Enter-QuickAccess</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>QuickAccess に登録されたパスへ移動します。</p>
+<h2 id="syntax">SYNTAX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter-QuickAccess [[-fuzzyKey] &lt;String&gt;]
+</code></pre></div></div>
+<h2 id="description">DESCRIPTION</h2>
+<p>コマンド”Enter-QuickAccess”で、QuickAccessに登録されているパスへと素早く移動できます。fuzzyKeyを指定すると、キーワード部分一致検索を行い、絞り込まれた該当するキーリストを表示します。fuzzyKeyが指定されない場合、登録されている全てがリスト表示されます。</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="examples1">EXAMPLES1</h3>
+<p>fuzzyKey指定無しの場合、登録されている全リスト表示し、インデックス選択で移動します。</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\username\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">qa</span><span class="w">
+</span><span class="o">--------------------------------</span><span class="w">
+</span><span class="n">QA</span><span class="w"> </span><span class="nx">MOVE</span><span class="w"> </span><span class="nx">CURRENT</span><span class="w">
+</span><span class="o">--------------------------------</span><span class="w">
+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="n">FolderA1</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="nx">FolderA2</span><span class="w">
+</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="n">FolderB</span><span class="w">
+</span><span class="o">--------------------------------</span><span class="w">
+</span><span class="n">Enter</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">select:</span><span class="w"> </span><span class="nx">2</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\username\Documents\FolderB</span><span class="err">&gt;</span><span class="w"> 
+</span></code></pre></div></div>
+<h3 id="examples2">EXAMPLES2</h3>
+<p>fuzzyKey 指定あり。複数該当。fuzzyKeyに”A”を指定した場合、”A”含むキーワード検索をします。該当が複数あった場合、リストが表示されます。</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\username\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">qa</span><span class="w"> </span><span class="nx">A</span><span class="w">
+</span><span class="o">--------------------------------</span><span class="w">
+</span><span class="n">QA</span><span class="w"> </span><span class="nx">MOVE</span><span class="w"> </span><span class="nx">CURRENT</span><span class="w">
+</span><span class="o">--------------------------------</span><span class="w">
+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="n">FolderA1</span><span class="w">
+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="nx">FolderA2</span><span class="w">
+</span><span class="o">--------------------------------</span><span class="w">
+</span><span class="n">Enter</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">select:</span><span class="w"> </span><span class="nx">1</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\username\Desktop\FolderA2</span><span class="err">&gt;</span><span class="w"> 
+</span></code></pre></div></div>
+<h3 id="examples3">EXAMPLES3</h3>
+<p>fuzzyKey 指定あり。該当するものが一つだけ見つかった場合、そのパスに直接移動します。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\[username]\Desktop&gt; qa B
+PS C:\Users\[username]\Documents\FolderB&gt; 
+</code></pre></div></div>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-fuzzykey">-fuzzyKey</h3>
+<p>部分一致検索を行うためのキーワード。
+省略された場合、登録されている全データがリスト表示。
+登録数が多い場合、fuzzyKeyの使用を推奨。</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Type</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">Parameter Sets</span><span class="pi">:</span> <span class="s">(All)</span>
+<span class="na">Aliases</span><span class="pi">:</span>
+<span class="na">Required</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Position</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Default value</span><span class="pi">:</span> <span class="s">None</span>
+<span class="na">Accept pipeline input</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">Accept wildcard characters</span><span class="pi">:</span> <span class="s">False</span>
+</code></pre></div></div>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="無し">無し。</h3>
+<p>この関数はパイプライン入力を受け付けません。</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="無し-1">無し。</h3>
+<p>この関数はパイプラインにオブジェクトを出力しません。</p>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://github.com/June-10-cloudy/QuickAccess-Help">QuickAccess Help Documents</a></p>
