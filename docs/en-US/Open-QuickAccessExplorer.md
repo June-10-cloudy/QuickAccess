@@ -75,4 +75,4 @@ This function does not output objects to the pipeline.
 ## NOTES
 "Open-QuickAccessExplorer " or "qae" uses explorer.exe to open folders.
 ## RELATED LINKS
-[QuickAccess Help Docments](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README.md)

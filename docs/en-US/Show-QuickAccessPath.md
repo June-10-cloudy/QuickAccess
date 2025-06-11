@@ -81,4 +81,4 @@ This function does not output objects to the pipeline.
 ## NOTES
 "Show-QuickAccessPath" or "qap" is useful for verifying the absolute path associated with a registered key.
 ## RELATED LINKS
-[QuickAccess Help Docments](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README.md)

@@ -46,5 +46,5 @@ This function does not output objects to the pipeline.
 ## NOTES
 "Show-QuickAccessList" or "qal" is a viewing command. It performs no actions.
 ## RELATED LINKS
-[QuickAccess Help Docments](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README.md)
 

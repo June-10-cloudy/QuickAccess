@@ -46,4 +46,4 @@ Accept wildcard characters: False
 ## NOTES
 "Show-QuickAccessList" または "qal"は、閲覧用コマンドです。アクションはありません。
 ## RELATED LINKS
-[QuickAccess Help Documents](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md)

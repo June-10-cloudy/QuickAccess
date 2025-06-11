@@ -76,4 +76,4 @@ This function does not accept pipeline input.
 ### None.
 This function does not output objects to the pipeline.
 ## RELATED LINKS
-[QuickAccess Help Docments](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README.md)

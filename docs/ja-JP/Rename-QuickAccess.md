@@ -70,4 +70,4 @@ Accept wildcard characters: False
 ### なし。
 この関数はパイプラインにオブジェクトを出力しません。
 ## RELATED LINKS
-[QuickAccess Help Documents](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md)

@@ -64,4 +64,4 @@ Accept wildcard characters: False
 ## NOTES
 "Get-QuickAccessOutput"は、パイプによってコマンド連結する場合に役立ちます。
 ## RELATED LINKS
-[QuickAccess Help Documents](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md)

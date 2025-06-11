@@ -84,4 +84,4 @@ Accept wildcard characters: False
 ## NOTES
 "Enter-QuickAccessFolder" または "qaf" は、登録対象を検索する時に使用します。
 ## RELATED LINKS
-[QuickAccess Help Documents](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md)

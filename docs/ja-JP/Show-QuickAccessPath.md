@@ -81,4 +81,4 @@ Accept wildcard characters: False
 ## NOTES
 "Show-QuickAccessPath" または "qap" は、登録キーに紐づいた絶対パスを確認するために役立ちます。
 ## RELATED LINKS
-[QuickAccess Help Documents](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md)

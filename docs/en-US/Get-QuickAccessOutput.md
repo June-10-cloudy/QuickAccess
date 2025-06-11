@@ -64,5 +64,5 @@ This function outputs the absolute path of the selected folder as a string objec
 ## NOTES
 "Get-QuickAccessOutput" is useful when chaining commands via the pipeline.
 ## RELATED LINKS
-[QuickAccess Help Docments](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README.md)
 

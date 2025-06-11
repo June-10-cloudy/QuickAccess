@@ -73,4 +73,4 @@ Accept wildcard characters: False
 ## NOTES
 "Open-QuickAccessExplorer " または "qae"はフォルダを開くために explorer.exe を使用します。
 ## RELATED LINKS
-[QuickAccess Help Documents](https://github.com/June-10-cloudy/QuickAccess-Help)
+[QuickAccess Help LinkMap](https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md)
