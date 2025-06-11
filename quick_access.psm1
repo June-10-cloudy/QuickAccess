@@ -6,5 +6,5 @@ $script:cacheLastModified = $null
 . "$PSScriptRoot\src\private\cache.ps1"
 . "$PSScriptRoot\src\public\qa.ps1"
 . "$PSScriptRoot\src\public\qf.ps1"
- "$PSScriptRoot\src\public\aliases.ps1"
+. "$PSScriptRoot\src\public\aliases.ps1"
 

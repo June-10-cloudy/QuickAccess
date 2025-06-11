@@ -2,8 +2,8 @@
     ModuleVersion = '1.0.0'
     RootModule = 'quick_access.psm1'
     FunctionsToExport = @(
-        'Enter-QuickAccess'
-        'Open-QuickAccessExplorer ',
+        'Enter-QuickAccess',
+        'Open-QuickAccessExplorer',
         'Add-QuickAccess',
         'Remove-QuickAccess',
         'Rename-QuickAccess',
@@ -19,6 +19,7 @@
         'Show-QuickFileAccessList',
         'Get-QuickFileAccessOutput'
     )
+
     CompatiblePSEditions = @('Desktop', 'Core')
-	HelpInfoUri = 'https://github.com/June-10-cloudy/QuickAccess/tree/master/docs'
+	HelpInfoUri = 'https://github.com/June-10-cloudy/QuickAccess'
 }

@@ -4,7 +4,7 @@ Set-Alias qae Open-QuickAccessExplorer
 Set-Alias qaa Add-QuickAccess
 Set-Alias qax Remove-QuickAccess
 Set-Alias qar Rename-QuickAccess
-Set-Alias qas Show-QuickAccessStatus # old alias qac
+Set-Alias qas Show-QuickAccessStatus
 Set-Alias qap Show-QuickAccessPath
 Set-Alias qal Show-QuickAccessList
 Set-Alias qaf Enter-QuickAccessFolder
