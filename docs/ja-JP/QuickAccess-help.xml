@@ -83,8 +83,8 @@ Saved: FolderA3-1 = C:\Users\user1\Documants\FolderA3</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -193,8 +193,8 @@ Favorited: C:\Users\[username]\Desktop\FileE2.txt</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -311,8 +311,8 @@ PS C:\Users\[username]\Documents\FolderB&gt;</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -424,8 +424,8 @@ PS C:\Users\[username]\Desktop\FolderD2&gt;</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -532,8 +532,8 @@ d-----         2023/10/26 10:00          FolderB</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -640,8 +640,8 @@ Mode                 LastWriteTime         Length Name
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -760,8 +760,8 @@ Enter the index to select: 1
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -880,8 +880,8 @@ Opening: C:\Users\[username]\Pictures\FileC3.jpg</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -992,8 +992,8 @@ Removed: FolderB</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1104,8 +1104,8 @@ Removed: FileB.txt</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1217,8 +1217,8 @@ Renamed 'FolderA2' to 'FolderA3'</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1297,8 +1297,8 @@ Accept wildcard characters: False</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1421,8 +1421,8 @@ path: C:\Users\[username]\Documents\FolderB</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1504,8 +1504,8 @@ Accept wildcard characters: False</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1584,8 +1584,8 @@ Accept wildcard characters: False</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1707,8 +1707,8 @@ path: C:\Users\[username]\Documents\FileB.txt</dev:code>
         <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>QuickAccess Help Documents</maml:linkText>
-        <maml:uri>https://github.com/June-10-cloudy/QuickAccess-Help</maml:uri>
+        <maml:linkText>QuickAccess Help LinkMap</maml:linkText>
+        <maml:uri>https://github.com/June-10-cloudy/QuickAccess/blob/master/README-ja-JP.md</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
