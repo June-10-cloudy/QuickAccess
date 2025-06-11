@@ -17,3 +17,9 @@
 pre code {
     font-size: 0.9em; /* 必要に応じて調整 */
 }
+
+body {
+  background-color: #ffffff;
+  /* 例: body の背景をライトグレーにする場合 */
+  /* background-color: #f8f8f8; */
+}
