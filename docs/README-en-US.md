@@ -5,23 +5,39 @@ QuickAccess is a PowerShell module that recreates the Quick Access and Favorites
 
 ## Commands & Aliases 
 ### Folder-related
-- Enter-QuickAccess        : qa  : Navigate to a registered path
-- Open-QuickAccessExplorer : qae : Open a registered path in File Explorer
-- Add-QuickAccess          : qaa : Register the current path to QuickAccess
-- Remove-QuickAccess       : qax : Unregister a key (for folders)
-- Rename-QuickAccess       : qar : Rename a registered key
-- Show-QuickAccessStatus   : qas : Check if the current path is registered
-- Show-QuickAccessPath     : qap : Display the absolute path corresponding to a registered key
-- Show-QuickAccessList     : qal : List all registered folder path keys
-- Enter-QuickAccessFolder  : qaf : List subfolders within the current path
-- Get-QuickAccessOutput    : qao : Output QuickAccess results as string objects (for folders)
-### File-related
-- Open-QuickFileAccess     : qf  :  Open a registered file with its default application
-- Add-QuickFileAccess      : qfa : Register a file to QuickAccess
-- Remove-QuickFileAccess   : qfx : Unregister a key (for files)
-- Show-QuickFileAccessPath : qfp : Display the absolute path corresponding to a registered file key
-- Show-QuickFileAccessList : qfl : List all registered file path keys
-- Get-QuickFileAccessOutput: qfo : Output QuickAccess results as string objects (for files)
+#### [Enter-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Enter-QuickAccess.md)
+- qa : Navigate to a registered path
+#### [Open-QuickAccessExplorer](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Open-QuickAccessExplorer.md)
+- qae : Open a registered path in File Explorer
+#### [Add-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Add-QuickAccess.md)
+- qaa : Register the current path to QuickAccess
+#### [Remove-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Remove-QuickAccess.md)
+- qax : Unregister a key (for folders)
+#### [Rename-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Rename-QuickAccess.md)
+- qar : Rename a registered key
+#### [Show-QuickAccessStatus](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Show-QuickAccessStatus.md)
+- qas : Check if the current path is registered
+#### [Show-QuickAccessPath](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Show-QuickAccessPath.md)
+- qap : Display the absolute path corresponding to a registered key
+#### [Show-QuickAccessList](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Show-QuickAccessList.md)
+- qal : List all registered folder path keys
+#### [Enter-QuickAccessFolder](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Enter-QuickAccessFolder.md)
+- qaf : List subfolders within the current path
+#### [Get-QuickAccessOutput](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Get-QuickAccessOutput.md)
+- qao : Output QuickAccess results as string objects (for folders)
+### ファイル関連
+#### [Open-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Open-QuickFileAccess.md)
+- qf : Open a registered file with its default application
+#### [Add-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Add-QuickFileAccess.md)
+- qfa : Register a file to QuickAccess
+#### [Remove-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Remove-QuickFileAccess.md)
+- qfx : Unregister a key (for files)
+#### [Show-QuickFileAccessPath](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Show-QuickFileAccessPath.md)
+- qfp : Display the absolute path corresponding to a registered file key
+#### [Show-QuickFileAccessList](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Show-QuickFileAccessList.md)
+- qfl : List all registered file path keys
+#### [Get-QuickFileAccessOutput](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/en-US/Get-QuickFileAccessOutput.md)
+- qfo : Output QuickAccess results as string objects (for files)
 
 ## nstallation
 

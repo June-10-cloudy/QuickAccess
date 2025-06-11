@@ -5,23 +5,39 @@ QuickAccessは、ファイルエクスプローラーのクイックアクセス
 
 ## コマンド & エイリアス 
 ### フォルダ関連
--  Enter-QuickAccess        : qa  : 登録パスへ移動 
--  Open-QuickAccessExplorer : qae : 登録パスをファイルエクスプローラーで開く
--  Add-QuickAccess          : qaa : カレントパスを QuickAccessに登録
--  Remove-QuickAccess       : qax : 登録キーを解除(フォルダ対象)
--  Rename-QuickAccess       : qar : 登録キーのリネーム
--  Show-QuickAccessStatus   : qas : カレントパスが登録されているかを確認
--  Show-QuickAccessPath     : qap : 登録キーに対応する絶対パスを表示
--  Show-QuickAccessList     : qal : 登録フォルダパス全てのキーをリスト表示
--  Enter-QuickAccessFolder  : qaf : カレントパス内のサブフォルダをリスト表示
--  Get-QuickAccessOutput    : qao : QuickAccessの結果を文字列オブジェクト出力(フォルダ対象)
+#### [Enter-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Enter-QuickAccess.md)
+- qa : 登録パスへ移動 
+#### [Open-QuickAccessExplorer](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Open-QuickAccessExplorer.md)
+- qae : 登録パスをファイルエクスプローラーで開く
+#### [Add-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Add-QuickAccess.md)
+- qaa : カレントパスを QuickAccessに登録
+#### [Remove-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Remove-QuickAccess.md)
+- qax : 登録キーを解除(フォルダ対象)
+#### [Rename-QuickAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Rename-QuickAccess.md)
+- qar : 登録キーのリネーム
+#### [Show-QuickAccessStatus](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Show-QuickAccessStatus.md)
+- qas : カレントパスが登録されているかを確認
+#### [Show-QuickAccessPath](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Show-QuickAccessPath.md)
+- qap : 登録キーに対応する絶対パスを表示
+#### [Show-QuickAccessList](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Show-QuickAccessList.md)
+- qal : 登録フォルダパス全てのキーをリスト表示
+#### [Enter-QuickAccessFolder](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Enter-QuickAccessFolder.md)
+- qaf : カレントパス内のサブフォルダをリスト表示
+#### [Get-QuickAccessOutput](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Get-QuickAccessOutput.md)
+- qao : QuickAccessの結果を文字列オブジェクト出力(フォルダ対象)
 ### ファイル関連
--  Open-QuickFileAccess     : qf  : 登録ファイルを既定のアプリケーションで開く
--  Add-QuickFileAccess      : qfa : ファイルをQuickAccessに登録
--  Remove-QuickFileAccess   : qfx : 登録キーを解除(ファイル対象)
--  Show-QuickFileAccessPath : qfp : 登録キーに対応する絶対パスを表示
--  Show-QuickFileAccessList : qfl : 登録ファイルパス全てのキーをリスト表示
--  Get-QuickFileAccessOutput: qfo : QuickAccessの結果を文字列オブジェクト出力(ファイル対象)
+#### [Open-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Open-QuickFileAccess.md)
+- qf : 登録ファイルを既定のアプリケーションで開く
+#### [Add-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Add-QuickFileAccess.md)
+- qfa : ファイルをQuickAccessに登録
+#### [Remove-QuickFileAccess](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Remove-QuickFileAccess.md)
+- qfx : 登録キーを解除(ファイル対象)
+#### [Show-QuickFileAccessPath](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Show-QuickFileAccessPath.md)
+- qfp : 登録キーに対応する絶対パスを表示
+#### [Show-QuickFileAccessList](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Show-QuickFileAccessList.md)
+- qfl : 登録ファイルパス全てのキーをリスト表示
+#### [Get-QuickFileAccessOutput](https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/Get-QuickFileAccessOutput.md)
+- qfo : QuickAccessの結果を文字列オブジェクト出力(ファイル対象)
 
 ## インストール
 
