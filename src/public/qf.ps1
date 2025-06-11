@@ -4,7 +4,7 @@
 Opens a file registered in QuickAccess with its default application. 
 This is similar to the "Favorites" feature in File Explorer.
 .DESCRIPTION
-"qf" opens a file registered in QuickAccess with its default application.
+"Open-QuickFileAccess" opens a file registered in QuickAccess with its default application.
 If you specify a fuzzyKey, it performs a partial keyword match search and
 displays a filtered list of corresponding keys. If no fuzzyKey is
 specified, all registered items are displayed in a list. If the file
@@ -19,7 +19,7 @@ This command applies to file registrations.
 When no fuzzyKey is specified, this example displays a full list of
 registered items and opens the selected index.
 ...
-PS C:\Users\[username]\Desktop> qf
+PS C:\Users\[username]\Desktop> Open-QuickFileAccess
 --------------------------------
 QF OPEN FILE
 --------------------------------
@@ -35,7 +35,7 @@ fuzzyKey is specified. Multiple matches. If "jp" is specified as
 the fuzzyKey, it searches for keywords containing "jp".
 If multiple matches are found, a list is displayed.
 ...
-PS C:\Users\[username]\Desktop> qf jp
+PS C:\Users\[username]\Desktop> Open-QuickFileAccess jp
 --------------------------------
 QF OPEN FILE
 --------------------------------
@@ -50,11 +50,11 @@ fuzzyKey is specified. Only one match found.
 If "C3" is specified as the fuzzyKey, only one match is found, 
 so the application launches directly.
 ...
-PS C:\Users\user1> qf C3
+PS C:\Users\user1> Open-QuickFileAccess C3
 Opening: C:\Users\[username]\Pictures\FileC3.jpg
 ...
 #>
-function qf {
+function Open-QuickFileAccess {
     param([string]$fuzzyKey)
     $hash = Get-Hash-Files
     if ($hash.Count -eq 1){
@@ -78,7 +78,7 @@ function qf {
 Selects a file from the current directory and registers it in QuickAccess. 
 This is similar to adding a file to "Favorites" in File Explorer.
 .DESCRIPTION
-"qfadd" or "qfa" lists files directly under the current directory.
+"Add-QuickFileAccess" or "qfa" lists files directly under the current directory.
 You can then select a file by index to register it in QuickAccess.
 By specifying a fuzzyKey, you can perform a partial match search to narrow
 down the target files. If no fuzzyKey is specified, all files directly
@@ -124,7 +124,7 @@ Enter the index to select: 1
 Favorited: C:\Users\[username]\Desktop\FileE2.txt
 ...
 #>
-function qfadd {
+function Add-QuickFileAccess {
     param([string]$fuzzyKey = "")
     $files = Get-ChildItem -Path (Get-Location) -File | Where-Object { $_.Extension -ne ".lnk" }
     if (-not ([string]::IsNullOrWhiteSpace($fuzzyKey))) {
@@ -164,7 +164,7 @@ function qfadd {
 .SYNOPSIS
 Unregisters a key from QuickAccess. This applies to files.
 .DESCRIPTION
-"qfremove" or "qfx" unregisters a key from QuickAccess.
+"Remove-QuickFileAccess" or "qfx" unregisters a key from QuickAccess.
 The file itself will not be deleted.
 You can specify a fuzzyKey to perform a partial match search
 and narrow down the target keys. If no fuzzyKey is specified, 
@@ -209,7 +209,7 @@ Do you want to remove 'FileB.txt'? (y/N): y
 Removed: FileB.txt
 ...
 #>
-function qfremove {
+function Remove-QuickFileAccess {
     param([string]$fuzzyKey)
     $hash = Get-Hash-Files
     $selectedKey = Get-MatchingKey -hash $hash -fuzzyKey $fuzzyKey -title "QF REMOVE KEY" -listDisplay $true
@@ -229,7 +229,7 @@ function qfremove {
 .SYNOPSIS
 Displays the absolute path corresponding to a key registered in QuickAccess.
 .DESCRIPTION
-"qfpath" or "qfp" displays the absolute path corresponding to a QuickAccess
+"Show-QuickFileAccessPath" or "qfp" displays the absolute path corresponding to a QuickAccess
 registration key. You can specify a fuzzyKey to perform a partial match
 search and narrow down the target keys. If multiple keys match, a list of 
 registered keys will be displayed. If only one key matches, its absolute path
@@ -240,7 +240,7 @@ None. This function does not accept pipeline input.
 .OUTPUTS
 None. This function does not output objects to the pipeline.
 .NOTES
-"qfpath" or "qfp" is useful for verifying the absolute path associated with a 
+"Show-QuickFileAccessPath" or "qfp" is useful for verifying the absolute path associated with a 
 registered key. This command applies to file registrations.
 .EXAMPLE
 When no fuzzyKey is specified, this example displays a full list of registered
@@ -282,7 +282,7 @@ key : FileB.txt
 path: C:\Users\[username]\Documents\FileB.txt
 ...
 #>
-function qfpath {
+function Show-QuickFileAccessPath {
     param([string]$fuzzyKey)
     $hash = Get-Hash-Files
     $selectedKey = Get-MatchingKey -hash $hash -fuzzyKey $fuzzyKey -title "QF SHOW PATH"
@@ -296,14 +296,14 @@ function qfpath {
 .SYNOPSIS
 Lists all registered file path keys in QuickAccess.
 .DESCRIPTION
-You can view all keys registered in QuickAccess using "qflist" or "qfl".
+You can view all keys registered in QuickAccess using "Show-QuickFileAccessList" or "qfl".
 This command only lists file paths; folder paths are not included.
 .INPUTS
 None. This function does not accept pipeline input.
 .OUTPUTS
 None. This function does not output objects to the pipeline.
 .NOTES
-"qflist" or "qfl" is a viewing command. It performs no actions.
+"Show-QuickFileAccessList" or "qfl" is a viewing command. It performs no actions.
 .EXAMPLE
 ...
 # Using alias "qfl".
@@ -317,7 +317,7 @@ QA ALL KEYS
 --------------------------------
 ...
 #>
-function qflist {
+function Show-QuickFileAccessList {
     $hash = Get-Hash-Files 
     Show-All-Keys -hash $hash
 }
@@ -326,7 +326,7 @@ function qflist {
 .SYNOPSIS
 Outputs QuickAccess search results as a string object.
 .DESCRIPTION
-"qfoutput" or "qfo" outputs the search results obtained from QuickAccess 
+"Get-QuickFileAccessOutput" or "qfo" outputs the search results obtained from QuickAccess 
 as a string object. This is useful for piping to other commands or 
 assigning to a variable. If you specify a fuzzyKey, it performs a partial 
 keyword search and displays a filtered list of matching keys. If no 
@@ -335,7 +335,7 @@ fuzzyKey is specified, all registered items are displayed in a list for selectio
 .EXAMPLE
 This example selects a registered file path and outputs it to the console.
 ...
-PS C:\Users\[username]\Desktop> qfoutput
+PS C:\Users\[username]\Desktop> Get-QuickFileAccessOutput
 --------------------------------
 QF OUTPUT PATH
 --------------------------------
@@ -350,7 +350,7 @@ C:\Users\[username]\Documents\FileA2.txt
 This example pipes a file path obtained from QuickAccess to 
 Get-Item to display its properties.
 ...
-PS C:\Users\[username]\Desktop> qfoutput B | Get-Item
+PS C:\Users\[username]\Desktop> Get-QuickFileAccessOutput B | Get-Item
     Directory: C:\Users\[username]\Documents
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
@@ -362,9 +362,9 @@ None. This function does not accept pipeline input.
 System.String
 This function outputs the absolute path of the selected file as a string object.
 .NOTES
-"qfoutput" is useful when chaining commands via the pipeline.
+"Get-QuickFileAccessOutput" is useful when chaining commands via the pipeline.
 #>
-function qfoutput {
+function Get-QuickFileAccessOutput {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Files

@@ -2,7 +2,7 @@
 .SYNOPSIS
 Navigates to a path registered in QuickAccess.
 .DESCRIPTION
-The "qa" command lets you quickly move to a path registered in 
+The "Enter-QuickAccess" command lets you quickly move to a path registered in 
 QuickAccess. If you specify a fuzzyKey, it performs a partial 
 keyword match and displays a filtered list of matching keys.
 If no fuzzyKey is specified, all registered paths are listed
@@ -53,7 +53,7 @@ PS C:\Users\[username]\Desktop> qa B
 PS C:\Users\[username]\Documents\FolderB> 
 ...
 #>
-function qa {
+function Enter-QuickAccess {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Folders 
@@ -69,7 +69,7 @@ function qa {
 Opens a path registered in QuickAccess with File Explorer.
 .DESCRIPTION
 You can open a path registered in QuickAccess with File Explorer
-using "qaexplorer" or "qae".If you specify a fuzzyKey, it 
+using "Open-QuickAccessExplorer " or "qae".If you specify a fuzzyKey, it 
 performs a partial keyword match search and displays a filtered
 list of corresponding keys.If no fuzzyKey is specified, all 
 registered items are displayedin a list.
@@ -78,7 +78,7 @@ None. This function does not accept pipeline input.
 .OUTPUTS
 None. This function does not output objects to the pipeline.
 .NOTES
-"qaexplorer" or "qae" uses explorer.exe to open folders.
+"Open-QuickAccessExplorer " or "qae" uses explorer.exe to open folders.
 .EXAMPLE
 When no fuzzyKey is specified, this example displays a full
 list of registered items and opens the selected index.
@@ -100,7 +100,7 @@ If "A" is specified as the fuzzyKey, it searches for
 keywords containing "A".
 If multiple matches are found, a list is displayed.
 ...
-PS C:\Users\[username]\Desktop> qa A
+PS C:\Users\[username]\Desktop> qae A
 --------------------------------
 QA OPEN EXPLORER
 --------------------------------
@@ -118,7 +118,7 @@ PS C:\Users\[username]\Desktop> qae B
 # File Explorer opens to the matching path.
 ...
 #>
-function qaexplorer {
+function Open-QuickAccessExplorer  {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Folders
@@ -133,7 +133,7 @@ function qaexplorer {
 .SYNOPSIS
 Unregisters a key from QuickAccess. This applies to folders.
 .DESCRIPTION
-"qaremove" or "qax" unregisters a key from QuickAccess.
+"Remove-QuickAccess" or "qax" unregisters a key from QuickAccess.
 The directory itself will not be deleted.
 You can specify a fuzzyKey to perform a partial match search 
 and narrow down the target keys. If no fuzzyKey is specified, 
@@ -179,7 +179,7 @@ Do you want to remove 'FolderB'? (y/N): y
 Removed: FolderB
 ...
 #>
-function qaremove {
+function Remove-QuickAccess {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Folders
@@ -200,7 +200,7 @@ function qaremove {
 .SYNOPSIS
 Registers the current path in QuickAccess.
 .DESCRIPTION
-"qaadd" or "qaa" registers the current path in QuickAccess.
+"Add-QuickAccess" or "qaa" registers the current path in QuickAccess.
 The registered key defaults to the final directory name of
 the current path. The current path cannot be registered in 
 the following cases:
@@ -246,7 +246,7 @@ PS C:\Users\[username]\Documents\FolderA3> qaa
 Added: FolderA3-1 = C:\Users\user1\Documants\FolderA3
 ...
 #>
-function qaadd {  
+function Add-QuickAccess {  
     [CmdletBinding()]
     $hash = Get-Hash-Folders
     $currentPath = (Get-Location).Path
@@ -272,7 +272,7 @@ function qaadd {
 .SYNOPSIS
 Renames a registered key in QuickAccess.
 .DESCRIPTION
-You can rename a QuickAccess registered key using "qarename" or "qar".
+You can rename a QuickAccess registered key using "Rename-QuickAccess" or "qar".
 By specifying a fuzzyKey, you can perform a partial match search and
 narrow down the target keys. If no fuzzyKey is specified, all
 registered items will be displayed in a list.
@@ -316,7 +316,7 @@ Enter new name for 'FolderA2': FolderA3
 Renamed 'FolderA2' to 'FolderA3'
 ...
 #>
-function qarename {
+function Rename-QuickAccess {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Folders
@@ -344,7 +344,7 @@ function qarename {
 Checks if the current path is registered in QuickAccess.
 .DESCRIPTION
 You can check if the current path is registered in QuickAccess
-using "qacheck" or "qac". If it's registered, the corresponding
+using "Show-QuickAccessStatus" or "qas". If it's registered, the corresponding
 key will be displayed. If it's not registered, a message
 indicating that will be shown.
 .INPUTS
@@ -353,21 +353,21 @@ None. This function does not accept pipeline input.
 None. This function does not output objects to the pipeline.
 .EXAMPLE
 When the current path is already registered and the key is "B".
-PS C:\Users\<UserName>\Documents\FolderB> qacheck
+PS C:\Users\<UserName>\Documents\FolderB> Show-QuickAccessStatus
 Key for current path: B
 ...
-# Using alias "qac".
-PS C:\Users\<UserName>\Documents\FolderB> qac
+# Using alias "qas".
+PS C:\Users\<UserName>\Documents\FolderB> qas
 Key for current path: B
 ...
 .EXAMPLE
 When the current path is not registered.
 ...
-PS C:\Users\<UserName>\Documents\FolderB> qac
+PS C:\Users\<UserName>\Documents\FolderB> qas
 Current path is not registered.
 ...
 #>
-function qacheck {
+function Show-QuickAccessStatus {
     [CmdletBinding()] 
     $hash = Get-Hash-Folders
     $currentPath = (Get-Location).Path
@@ -382,7 +382,7 @@ function qacheck {
 .SYNOPSIS
 Displays the absolute path corresponding to a key registered in QuickAccess.
 .DESCRIPTION
-"qapath" or "qap" displays the absolute path corresponding to a QuickAccess
+"Show-QuickAccessPath" or "qap" displays the absolute path corresponding to a QuickAccess
 registration key. You can specify a fuzzyKey to perform a partial match
 search and narrow down the target keys. If multiple keys match, a list of 
 registered keys will be displayed. If only one key matches, its absolute
@@ -393,7 +393,7 @@ None. This function does not accept pipeline input.
 .OUTPUTS
 None. This function does not output objects to the pipeline.
 .NOTES
-"qapath" or "qap" is useful for verifying the absolute path associated with
+"Show-QuickAccessPath" or "qap" is useful for verifying the absolute path associated with
 a registered key.
 .EXAMPLE
 When no fuzzyKey is specified, this example displays a full list of
@@ -437,7 +437,7 @@ key : FolderB
 path: C:\Users\[username]\Documents\FolderB
 ...
 #>
-function qapath {
+function Show-QuickAccessPath {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Folders
@@ -453,14 +453,14 @@ function qapath {
 .SYNOPSIS
 Lists all registered folder path keys in QuickAccess.
 .DESCRIPTION
-You can view all keys registered in QuickAccess using "qalist" or "qal".
+You can view all keys registered in QuickAccess using "Show-QuickAccessList" or "qal".
 This command only lists folder paths; file paths are not included.
 .INPUTS
 None. This function does not accept pipeline input.
 .OUTPUTS
 None. This function does not output objects to the pipeline.
 .NOTES
-"qalist" or "qal" is a viewing command. It performs no actions.
+"Show-QuickAccessList" or "qal" is a viewing command. It performs no actions.
 .EXAMPLE
 ...
 # Using alias "qal".
@@ -474,7 +474,7 @@ QA ALL KEYS
 --------------------------------
 ...
 #>
-function qalist {
+function Show-QuickAccessList {
     [CmdletBinding()]
     $hash = Get-Hash-Folders 
     Show-All-Keys -hash $hash
@@ -498,7 +498,7 @@ None. This function does not accept pipeline input.
 .OUTPUTS
 None. This function does not output objects to the pipeline.
 .NOTES
-"qafind" or "qaf" is used when searching for registration targets.
+"Enter-QuickAccessFolder" or "qaf" is used when searching for registration targets.
 .EXAMPLE
 No fuzzyKey specified. This example uses "qaf" to list subfolders
 directly under the current path and select one by index. Once the
@@ -531,7 +531,7 @@ Enter the index to select: 1
 PS C:\Users\[username]\Desktop\FolderD2>
 ...
 #>
-function qafind {
+function Enter-QuickAccessFolder {
     [CmdletBinding()]
     param([string]$fuzzyKey = "")
     $folders = Get-ChildItem -Path (Get-Location) -Directory
@@ -560,7 +560,7 @@ function qafind {
 .SYNOPSIS
 Outputs QuickAccess search results as a string object.
 .DESCRIPTION
-"qaoutput" or "qao" outputs the search results obtained from 
+"Get-QuickAccessOutput" or "qao" outputs the search results obtained from 
 QuickAccess as a string object. This is useful for piping the
 path to other commands or assigning it to a variable. If you 
 specify a fuzzyKey, it performs a partial keyword search and 
@@ -573,7 +573,7 @@ System.String
 This function outputs the absolute path of the selected folder
 as a string object.
 .NOTES
-"qaoutput" is useful when chaining commands via the pipeline.
+"Get-QuickAccessOutput" is useful when chaining commands via the pipeline.
 .EXAMPLE
 This example selects a registered path and outputs it to the console.
 ...
@@ -599,7 +599,7 @@ Mode                 LastWriteTime         Length Name
 d-----         2023/10/26 10:00          FolderB
 ...
 #>
-function qaoutput {
+function Get-QuickAccessOutput {
     [CmdletBinding()]
     param([string]$fuzzyKey)
     $hash = Get-Hash-Folders
