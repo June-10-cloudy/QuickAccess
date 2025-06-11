@@ -1,6 +1,6 @@
 ---
 external help file: QuickAccess-help.xml
-online version: https://github.com/June-10-cloudy/QuickAccess/blob/master/help/ja-JP/QuickAccess-help.xml
+online version: https://github.com/June-10-cloudy/QuickAccess/blob/master/docs/ja-JP/QuickAccess-help.xml
 schema: 2.0.0
 ---
 # Open-QuickAccessExplorer 
