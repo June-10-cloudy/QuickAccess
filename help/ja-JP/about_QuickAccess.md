@@ -6,7 +6,7 @@ external help file: QuickAccess-help.xml
 ## SHORT DESCRIPTION
 QuickAccessは、ファイルエクスプローラーのクイックアクセス機能、お気に入り機能をCUI環境で再現したモジュールです。
 ## LONG DESCRIPTION
-QuickAccessによって、頻繁に利用するフォルダ、ファイルへのアクセスをシンプルに管理、利用するための PowerShellコマンドレット群です。ファジー検索で対象を絞込み、素早く必要なフォルダパス、ファイルパスに到達できます。
+頻繁に利用するフォルダ、ファイルへのアクセスをシンプルに管理、利用するための PowerShellコマンドレット群です。ファジー検索で対象を絞込み、素早く必要なフォルダパス、ファイルパスに到達できます。
 ## COMMANDLETS
 Enter-QuickAccess        : 登録パスへ移動 
 Open-QuickAccessExplorer : 登録パスをファイルエクスプローラーで開く
