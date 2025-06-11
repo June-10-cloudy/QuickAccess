@@ -5,23 +5,23 @@ QuickAccess is a PowerShell module that recreates the Quick Access and Favorites
 
 ## Commands & Aliases 
 ### Folder-related
-*Enter-QuickAccess        : qa  : Navigate to a registered path
-*Open-QuickAccessExplorer : qae : Open a registered path in File Explorer
-*Add-QuickAccess          : qaa : Register the current path to QuickAccess
-*Remove-QuickAccess       : qax : Unregister a key (for folders)
-*Rename-QuickAccess       : qar : Rename a registered key
-*Show-QuickAccessStatus   : qas : Check if the current path is registered
-*Show-QuickAccessPath     : qap : Display the absolute path corresponding to a registered key
-*Show-QuickAccessList     : qal : List all registered folder path keys
-*Enter-QuickAccessFolder  : qaf : List subfolders within the current path
-*Get-QuickAccessOutput    : qao : Output QuickAccess results as string objects (for folders)
++Enter-QuickAccess        : qa  : Navigate to a registered path
++Open-QuickAccessExplorer : qae : Open a registered path in File Explorer
++Add-QuickAccess          : qaa : Register the current path to QuickAccess
++Remove-QuickAccess       : qax : Unregister a key (for folders)
++Rename-QuickAccess       : qar : Rename a registered key
++Show-QuickAccessStatus   : qas : Check if the current path is registered
++Show-QuickAccessPath     : qap : Display the absolute path corresponding to a registered key
++Show-QuickAccessList     : qal : List all registered folder path keys
++Enter-QuickAccessFolder  : qaf : List subfolders within the current path
++Get-QuickAccessOutput    : qao : Output QuickAccess results as string objects (for folders)
 ### File-related
-*Open-QuickFileAccess     : qf  :  Open a registered file with its default application
-*Add-QuickFileAccess      : qfa : Register a file to QuickAccess
-*Remove-QuickFileAccess   : qfx : Unregister a key (for files)
-*Show-QuickFileAccessPath : qfp : Display the absolute path corresponding to a registered file key
-*Show-QuickFileAccessList : qfl : List all registered file path keys
-*Get-QuickFileAccessOutput: qfo : Output QuickAccess results as string objects (for files)
++Open-QuickFileAccess     : qf  :  Open a registered file with its default application
++Add-QuickFileAccess      : qfa : Register a file to QuickAccess
++Remove-QuickFileAccess   : qfx : Unregister a key (for files)
++Show-QuickFileAccessPath : qfp : Display the absolute path corresponding to a registered file key
++Show-QuickFileAccessList : qfl : List all registered file path keys
++Get-QuickFileAccessOutput: qfo : Output QuickAccess results as string objects (for files)
 
 ## nstallation
 
@@ -58,7 +58,7 @@ If the following output appears, the setup is successful:
 PS C:\Users\username\Documents\PowerShell\Modules\QuickAccess> Get-Command Enter-QuickAccess
 
 CommandType     Name                                               Version    Source
-*----------     ----                                               -------    ------
++----------     ----                                               -------    ------
 Function        Enter-QuickAccess                                  1.0.0      QuickAccess
 ```
 
