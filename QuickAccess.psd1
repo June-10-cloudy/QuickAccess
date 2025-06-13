@@ -118,7 +118,7 @@ PrivateData = @{
         Tags = @('QuickAccess', 'Navigation', 'FileExplorer')
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/June-10-cloudy/QuickAccess/blob/master/LICENSE'
+        LicenseUri = 'https://github.com/June-10-cloudy/QuickAccess/blob/master/LICENSE.txt'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/June-10-cloudy/QuickAccess'
