@@ -18,6 +18,6 @@
     <file src="QuickAccess.psm1" target="" />
     <file src="src\**\*" target="src\" /> 
     <file src="README.md" target="" />
-	<file src="LICENSE" target="" />
+	<file src="LICENSE.txt" target="" />
   </files>
 </package>
