@@ -115,10 +115,10 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('QuickAccess', 'CLI', 'PowerShell', 'Navigation', 'File Explorer')
+        Tags = @('QuickAccess', 'Navigation', 'FileExplorer')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/June-10-cloudy/QuickAccess/blob/master/LICENSE'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/June-10-cloudy/QuickAccess'
@@ -127,7 +127,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = @('1.0.1: fixes QuickAccess.psd1')
 
         # Prerelease string of this module
         # Prerelease = ''
