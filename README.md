@@ -68,6 +68,7 @@ QA ALL KEYS
 First, navigate to your desktop.
 ```powershell
 PS C:\Users\username> cd C:\Users\username\Desktop
+PS C:\Users\username\Desktop>
 ```
 Now, type "qa". The registration list will appear (there's only one item for now).
 When prompted "Enter the index to select :", type "0".

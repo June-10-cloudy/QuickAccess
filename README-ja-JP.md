@@ -74,6 +74,7 @@ QA ALL KEYS
 一旦、デスクトップに移動します。
 ```powershell
 PS C:\Users\username> cd C:\Users\username\Desktop
+PS C:\Users\username\Desktop>
 ```
 
 "qa" と入力します。登録リストが表示されます。(まだ一つしかありません)
