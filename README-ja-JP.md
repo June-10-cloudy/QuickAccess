@@ -81,7 +81,7 @@ PS C:\Users\username\Desktop>
 "Enter the index to select :" と聞かれたら、"0" と入力。
 カレントが登録パスに移動します。
 ```powershell
-PS C:\Users\user1\Desktop> qa
+PS C:\Users\username\Desktop> qa
 --------------------------------
 QA MOVE CURRENT
 --------------------------------

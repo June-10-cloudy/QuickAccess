@@ -50,7 +50,7 @@ Quick access data jsonfile is empty.
 Your current path will be registered with QuickAccess.
 ```powershell
 PS C:\Users\username> qaa
-Added: user1 = C:\Users\username
+Added: username = C:\Users\username
 ```
 
 ### 3. Let's confirm it's registered. Type "qal".
@@ -74,7 +74,7 @@ Now, type "qa". The registration list will appear (there's only one item for now
 When prompted "Enter the index to select :", type "0".
 Your current directory will change to the registered path.
 ```powershell
-PS C:\Users\user1\Desktop> qa
+PS C:\Users\username\Desktop> qa
 --------------------------------
 QA MOVE CURRENT
 --------------------------------
