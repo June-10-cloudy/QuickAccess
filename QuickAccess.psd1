@@ -12,7 +12,7 @@
 RootModule = 'QuickAccess.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.3'
+ModuleVersion = '1.0.9'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Desktop', 'Core')
@@ -127,7 +127,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = @('1.0.3: fixes README.md add tutorial')
+        ReleaseNotes = @('1.0.9 : Fix installation issue')
 
         # Prerelease string of this module
         # Prerelease = ''
